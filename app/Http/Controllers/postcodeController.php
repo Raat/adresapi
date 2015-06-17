@@ -1,12 +1,11 @@
 <?php namespace App\Http\Controllers;
 
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
 use App\postcode;
-
 use Illuminate\Http\Request;
+use Chrisbjr\ApiGuard\Http\Controllers\ApiGuardController;
 
-class postcodeController extends Controller {
+class postcodeController extends ApiGuardController {
 
 	public function getPostcode($postcode)
 	{

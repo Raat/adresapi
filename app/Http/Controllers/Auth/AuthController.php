@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use Chrisbjr\ApiGuard\Models\ApiKey;
 use Validator;
+use Chrisbjr\ApiGuard\src\Repositories\ApiKeyRepository;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
@@ -61,7 +63,23 @@ class AuthController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'apiKey' => str_random(40)
         ]);
     }
+
+    protected function createKey($user_id)
+    {
+        //create the api key
+        $apiKey = new ApiKey;
+        
+        return ApiKey::create([
+             'key' => $apiKey->generateKey(),
+             'user_id' => $user_id,
+             'level' => 10,
+             'ignore_limits' => 1
+        ]);
+
+     
+    }
+
+
 }

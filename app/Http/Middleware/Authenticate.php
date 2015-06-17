@@ -14,6 +14,7 @@ class Authenticate
      */
     protected $auth;
 
+    protected $redirectTo = '/user/dashboard';
     /**
      * Create a new filter instance.
      *
