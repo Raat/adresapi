@@ -11,6 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [
+	'as' => 'home',
+	'uses' => 'pagesController@home']
+);
+
+Route::controllers([
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
+    'user' => 'User\DashboardController'
+]);
+
+Route::group(['prefix' => 'api/v1'], function(){
+
+	Route::get('postcodes/{postcode}', 'PostcodeController@getPostcode');
+
 });
