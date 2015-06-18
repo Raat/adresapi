@@ -143,7 +143,13 @@ return [
         App\Providers\AppServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
+        /*
+         * Api Service Providers...
+         */
+
         'Chrisbjr\ApiGuard\Providers\ApiGuardServiceProvider',
+        'Barryvdh\Cors\CorsServiceProvider',
 
     ],
 

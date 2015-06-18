@@ -2,8 +2,9 @@
  
 @section('content')
  
-<h1>Welcome Home</h1>
-<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, possimus, ullam? Deleniti dicta eaque facere, facilis in inventore mollitia officiis porro totam voluptatibus! Adipisci autem cumque enim explicabo, iusto sequi.</p>
-
+<h1>Adres Api</h1>
+<p class="lead">Valideer postcodes via de api. Registreer een account om een api key te krijgen. 
+	Via deze key kan je gebruik maken van de api en krijg je een json response om postcodes te valideren.
+<p>
  
-@stop
+@stop 
